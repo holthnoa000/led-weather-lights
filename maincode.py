@@ -1,8 +1,6 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
-#darksky_key = ""
-#insert the location for the forecast here. For example "Germany/Berlin"
-#location = ""
+
 #this decides when it is time to display the forecast for the next day. If you want to show always the forecast for the day, set it to 24:
 switch_time = 12
 
@@ -15,7 +13,9 @@ import pigpio
 import random
 pi = pigpio.pi()
 
+#Copy and paste JSON file url
 url = ''
+
 myweather_sum = get(url).json()['currently']['icon']
 conditions = {"cloudy" : "cloudy", "partly-cloudy-day" : "cloudy", "partly-cloudy-night" : "cloudy", "fog" : "cloudy", "clear-day" : "sunny", "clear-night" : "sunny" , "snow" : "snowy", "sleet" : "snowy", "hail" : "snowy" , "rain" : "rainy" , "thunderstormstorm" : "stormy"}
 # conditions (=programs) can be: cloudy, sunny, snowy, rainy, stormy
